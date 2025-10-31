@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int answer;
+	int answer1;
+	int answer2;
+	string answer3;
+	int i = 1;
+	int lives = 3;
+	int wins = 0;
+	int kol_vo = 10;
+	string name;
+	cout << "Введите имя" << endl;
+	cin >> name;
+	cout << "Добрый день, " << name << "!" << endl << "[ Меню ]" << endl << "[1] Начать игру" << endl << "[2] Настройки" << endl << "[3] Правила" << endl << "[4] Выйти." << endl;
+	cin >> answer;
+	while (answer != 1)
+	{
+		if (answer == 2)
+		{
+			cout << endl << "[ Настройки ]" << endl << "[1] Редактировать имя игрока" << endl << "[2] Изменить количество вопросов (сейчас вопросов " << kol_vo << ")" << endl << "[3] Редактировать цвет интерфейса" << endl;
+			cin >> answer1;
+			if (answer1 == 1)
+			{
+				cout << "Введите имя" << endl;
+				cin >> name;
+			}
+			else if (answer1 == 2)
+			{
+				cout << "Выберите количество вопросов (8 - 10 - 12)" << endl;
+				cin >> answer2;
+			}
+		}
+		else if (answer1 == 3)
+		{
+			cout << "[ Правила ]" << endl << "- Игрок получает очки за правильный ответ на вопрос" << endl << "- Игрок проходит дальше за правильный ответ" << endl << "Игрок теряет жизнь при неправильном ответе" << endl;
+		}
+		cout << endl << "[ Меню ]" << endl << "[1] Начать игру" << endl << "[2] Настройки" << endl << "[3] Правила" << endl << "[4] Выйти." << endl;
+	}
+		cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[1] Вопрос : Системный язык программирования ? " << endl << "[A] Python       [B] С#" << endl << "[C] Ruby      [D] C++" << endl << "[+] Выбрать ответ : ";
+		cin >> answer3;
+		if (answer3 == "D")
+		{
+			wins = wins + 1;
+		}
+		else
+		{
+			lives = lives - 1;
+		}
+		cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[2] Вопрос : Устаревший язык программирования ? " << endl << "[A] Python      [B] С#" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+		cin >> answer3;
+		if (answer3 == "C")
+		{
+			wins = wins + 1;
+		}
+		else
+		{
+			lives = lives - 1;
+		}
+	
