@@ -58,4 +58,28 @@ int main() {
 		{
 			lives = lives - 1;
 		}
+		cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[2] Вопрос : Самый новый язык программирования? " << endl << "[A] Python      [B] FuchsiaScript" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+		cin >> answer3;
+		if (answer3 == "C")
+		{
+			wins = wins + 1;
+		}
+		else
+		{
+			lives = lives - 1;
+		}
+		if (lives > 0)
+		{
+			cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[2] Вопрос : Самый новый язык программирования? " << endl << "[A] Python      [B] FuchsiaScript" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+			cin >> answer3;
+			if (answer3 == "C")
+			{
+				wins = wins + 1;
+			}
+			else
+			{
+				lives = lives - 1;
+			}
+		}
+
 	
