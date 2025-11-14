@@ -68,7 +68,7 @@ int main() {
 			cout << "[ Правила ]" << endl << "- Игрок получает очки за правильный ответ на вопрос" << endl << "- Игрок проходит дальше за правильный ответ" << endl << "Игрок теряет жизнь при неправильном ответе" << endl << "[0] Назад" << endl;
 			answer = _getch();
 		}
-		else if (answer == '1')
+		if (answer == '1')
 		{
 			system("cls");
 			cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[1] Вопрос : Системный язык программирования ? " << endl << "[A] Python    [B] С#" << endl << "[C] Ruby      [D] C++" << endl << "[+] Выбрать ответ : ";
@@ -176,11 +176,7 @@ int main() {
 			if (kol_vo == 8)
 			{
 				system("cls");
-				if (lives == 0)
-				{
-					cout << endl << "Loser" << endl;
-				}
-				else
+				if (lives > 0)
 				{
 					cout << endl << "Викторина завершена!" << endl;
 					cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << "/" << kol_vo << endl;
@@ -219,11 +215,7 @@ int main() {
 				if (kol_vo == 10)
 				{
 					system("cls");
-					if (lives == 0)
-					{
-						cout << endl << "Loser" << endl;
-					}
-					else
+					if (lives > 0)
 					{
 						cout << endl << "Викторина завершена!" << endl;
 						cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << "/" << kol_vo << endl;
@@ -260,15 +252,16 @@ int main() {
 						}
 					}
 					system("cls");
-					if (lives == 0)
-					{
-						cout << endl << "Loser" << endl;
-					}
-					else
+					if (lives > 0)
 					{
 						cout << endl << "Викторина завершена!" << endl;
 						cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << "/" << kol_vo << endl;
 					}
+				}
+				if (lives == 0)
+				{
+					cout << "\x1b[31m" << endl << "LOSER" << endl;
+					break;
 				}
 			}
 		}
