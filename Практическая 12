@@ -1,0 +1,276 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int answer;
+	int answer1;
+	int answer2;
+	int answer4;
+	string answer3;
+	int i = 1;
+	int lives = 3;
+	int wins = 0;
+	int kol_vo = 10;
+	string name;
+	string color = "\x1b[0m";
+	cout << color << "Добрый день. Введите имя: ";
+	cin >> name;
+	while (true)
+	{
+		system("cls");
+		cout << color << "[ Меню ]" << endl << "[1] Начать игру" << endl << "[2] Настройки" << endl << "[3] Правила" << endl << "[0] Выйти." << endl;
+		answer = _getch();
+		if (answer == '2')
+		{
+			system("cls");
+			cout << endl << color << "[ Настройки ]" << endl << "[1] Редактировать имя игрока" << endl << "[2] Изменить количество вопросов (сейчас вопросов " << kol_vo << ")" << endl << "[3] Редактировать цвет интерфейса" << endl << "[0] Назад" << endl;
+			answer1 = _getch();
+			if (answer1 == '1')
+			{
+				system("cls");
+				cout << color << "Введите имя: ";
+				cin >> name;
+			}
+			else if (answer1 == '2')
+			{
+				system("cls");
+				cout << color << "Выберите количество вопросов (8 - 10 - 12): ";
+				cin >> kol_vo;
+			}
+			else if (answer1 == '3')
+			{
+				system("cls");
+				cout << "Сменить цвет на: " << endl << "[1] Белый" << endl << "[2] Красный" << endl << "[3] Синий" << endl << "[4] Зеленый" << endl << "[0] Назад" << endl;
+				answer4 = _getch();
+				if (answer4 == '2')
+				{
+					color = "\x1b[31m";
+				}
+				else if (answer4 == '3')
+				{
+					color = "\x1b[34m";
+				}
+				else if (answer4 == '4')
+				{
+					color = "\x1b[32m";
+				}
+				else if (answer4 == '1')
+				{
+					color = "\x1b[0m";
+				}
+			}
+		}
+		else if (answer == '3')
+		{
+			system("cls");
+			cout << "[ Правила ]" << endl << "- Игрок получает очки за правильный ответ на вопрос" << endl << "- Игрок проходит дальше за правильный ответ" << endl << "Игрок теряет жизнь при неправильном ответе" << endl << "[0] Назад" << endl;
+			answer = _getch();
+		}
+		else if (answer == '1')
+		{
+			system("cls");
+			cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[1] Вопрос : Системный язык программирования ? " << endl << "[A] Python    [B] С#" << endl << "[C] Ruby      [D] C++" << endl << "[+] Выбрать ответ : ";
+			cin >> answer3;
+			if (answer3 == "D")
+			{
+				wins = wins + 1;
+			}
+			else
+			{
+				lives = lives - 1;
+			}
+			system("cls");
+			cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[2] Вопрос : Устаревший язык программирования ? " << endl << "[A] Python       [B] С#" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+			cin >> answer3;
+			if (answer3 == "C")
+			{
+				wins = wins + 1;
+			}
+			else
+			{
+				lives = lives - 1;
+			}
+			system("cls");
+			cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[3] Вопрос : Самый новый язык программирования? " << endl << "[A] Python       [B] FuchsiaScript" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+			cin >> answer3;
+			if (answer3 == "B")
+			{
+				wins = wins + 1;
+			}
+			else
+			{
+				lives = lives - 1;
+			}
+			if (lives > 0)
+			{
+				system("cls");
+				cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[4] Вопрос : Самый популярный язык программирования? " << endl << "[A] Python       [B] FuchsiaScript" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+				cin >> answer3;
+				if (answer3 == "A")
+				{
+					wins = wins + 1;
+				}
+				else
+				{
+					lives = lives - 1;
+				}
+			}
+			if (lives > 0)
+			{
+				system("cls");
+				cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[5] Вопрос : Самый сложный язык программирования? " << endl << "[A] Python         [B] FuchsiaScript" << endl << "[C] Malbolge       [D] C++" << endl << "[+] Выбрать ответ : ";
+				cin >> answer3;
+				if (answer3 == "C")
+				{
+					wins = wins + 1;
+				}
+				else
+				{
+					lives = lives - 1;
+				}
+			}
+			if (lives > 0)
+			{
+				system("cls");
+				cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[6] Вопрос : Самый легкий язык программирования? " << endl << "[A] Python         [B] FuchsiaScript" << endl << "[C] Malbolge       [D] C++" << endl << "[+] Выбрать ответ : ";
+				cin >> answer3;
+				if (answer3 == "A")
+				{
+					wins = wins + 1;
+				}
+				else
+				{
+					lives = lives - 1;
+				}
+			}
+			if (lives > 0)
+			{
+				system("cls");
+				cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[7] Вопрос : Самый удобный язык программирования для создания приложений? " << endl << "[A] Python           [B] FuchsiaScript" << endl << "[C] JavaScript       [D] C++" << endl << "[+] Выбрать ответ : ";
+				cin >> answer3;
+				if (answer3 == "C")
+				{
+					wins = wins + 1;
+				}
+				else
+				{
+					lives = lives - 1;
+				}
+			}
+			if (lives > 0)
+			{
+				system("cls");
+				cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[8] Вопрос : Самый удобный язык программирования для создания игр? " << endl << "[A] Python       [B] FuchsiaScript" << endl << "[C] Pascal       [D] C++" << endl << "[+] Выбрать ответ : ";
+				cin >> answer3;
+				if (answer3 == "D")
+				{
+					wins = wins + 1;
+				}
+				else
+				{
+					lives = lives - 1;
+				}
+			}
+			if (kol_vo == 8)
+			{
+				system("cls");
+				if (lives == 0)
+				{
+					cout << endl << "Loser" << endl;
+				}
+				else
+				{
+					cout << endl << "Викторина завершена!" << endl;
+					cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << "/" << kol_vo << endl;
+				}
+			}
+			if (kol_vo > 8)
+			{
+				if (lives > 0)
+				{
+					system("cls");
+					cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[7] Вопрос : на каком языке программирования пишется искусственный интеллект? " << endl << "[A] Python  [B] FuchsiaScript" << endl << "[C] C#      [D] C" << endl << "[+] Выбрать ответ : ";
+					cin >> answer3;
+					if (answer3 == "A")
+					{
+						wins = wins + 1;
+					}
+					else
+					{
+						lives = lives - 1;
+					}
+				}
+				if (lives > 0)
+				{
+					system("cls");
+					cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[8] Вопрос : какой язык программирования используется в бухгалтерии? " << endl << "[A] Python   [B] FuchsiaScript" << endl << "[C] 1C       [D] C++" << endl << "[+] Выбрать ответ : ";
+					cin >> answer3;
+					if (answer3 == "C")
+					{
+						wins = wins + 1;
+					}
+					else
+					{
+						lives = lives - 1;
+					}
+				}
+				if (kol_vo == 10)
+				{
+					system("cls");
+					if (lives == 0)
+					{
+						cout << endl << "Loser" << endl;
+					}
+					else
+					{
+						cout << endl << "Викторина завершена!" << endl;
+						cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << "/" << kol_vo << endl;
+					}
+				}
+				if (kol_vo == 12)
+				{
+					if (lives > 0)
+					{
+						system("cls");
+						cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[7] Вопрос : какой язык программирования применяется в робототехнике?" << endl << "[A] Python       [B] FuchsiaScript" << endl << "[C] Malbolge    [D] C" << endl << "[+] Выбрать ответ : ";
+						cin >> answer3;
+						if (answer3 == "D")
+						{
+							wins = wins + 1;
+						}
+						else
+						{
+							lives = lives - 1;
+						}
+					}
+					if (lives > 0)
+					{
+						system("cls");
+						cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << endl << "[8] Вопрос : какой язык программирования используется в excel? " << endl << "[A] Python   [B] VBA" << endl << "[C] 1C       [D] C++" << endl << "[+] Выбрать ответ : ";
+						cin >> answer3;
+						if (answer3 == "B")
+						{
+							wins = wins + 1;
+						}
+						else
+						{
+							lives = lives - 1;
+						}
+					}
+					system("cls");
+					if (lives == 0)
+					{
+						cout << endl << "Loser" << endl;
+					}
+					else
+					{
+						cout << endl << "Викторина завершена!" << endl;
+						cout << "[ + ] Игрок: " << name << " | жизни: " << lives << " | очки : " << wins << "/" << kol_vo << endl;
+					}
+				}
+			}
+		}
+	}
+}
